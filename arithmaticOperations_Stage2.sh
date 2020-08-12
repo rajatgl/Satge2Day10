@@ -9,3 +9,6 @@ read -p "a :" a
 read -p "b :" b
 read -p "c :" c
 
+#Computing_a+b*C
+echo "Computing_a+b*c : $((b*c+a))"
+
