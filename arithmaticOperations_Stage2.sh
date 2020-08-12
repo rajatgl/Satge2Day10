@@ -40,8 +40,10 @@ echo  "Computing_a%b+c : $result4"
 Results["Op"4]=$result4
 
 #For Pinting Key And Values Of Dictionary
-#echo "${!Results[@]}"
-#echo "${Results[@]}"
+echo "Keys Of Results Dictionary:"
+echo "${!Results[@]}"
+echo "Values of Results Dictionary:"
+echo "${Results[@]}"
 
 #Reading Values Of Results into an array
 count=0
@@ -49,4 +51,10 @@ for i in ${Results[@]}
 do
 	ResultsArray[((count++))]=$i
 done
+echo "ResultsArray :"
 echo ${ResultsArray[@]}
+
+#Showing Computation Results In Descending Order
+echo "Descending Order ---->"
+echo ${ResultsArray[@]}|tr " " "\n" | sort -n -r | tr "\n" " "
+
