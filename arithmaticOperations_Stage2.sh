@@ -43,3 +43,10 @@ Results["Op"4]=$result4
 #echo "${!Results[@]}"
 #echo "${Results[@]}"
 
+#Reading Values Of Results into an array
+count=0
+for i in ${Results[@]}
+do
+	ResultsArray[((count++))]=$i
+done
+echo ${ResultsArray[@]}
