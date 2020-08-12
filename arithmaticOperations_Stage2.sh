@@ -57,4 +57,8 @@ echo ${ResultsArray[@]}
 #Showing Computation Results In Descending Order
 echo "Descending Order ---->"
 echo ${ResultsArray[@]}|tr " " "\n" | sort -n -r | tr "\n" " "
+echo ""
 
+#Showing Computation Results In Ascending Order
+echo "Ascending Order ---->"
+echo ${ResultsArray[@]}|tr " " "\n" | sort -n | tr "\n" " "
