@@ -19,3 +19,8 @@ echo "Computing_a*b+c : $((a*b+c))"
 result=$(echo $a $b | awk '{printf "%4.3f\n",$1/$2}')
 result=$(echo $result $c | awk '{printf "%4.3f\n",$1+$2}')
 echo "Computing_c+a/b :$result"
+
+#Computing_a%b+c
+result1=$(echo $a $b | awk '{printf "%4.3f\n",$1%$2}')
+result1=$(echo $result1 $c | awk '{printf "%4.3f\n",$1+$2}')
+echo  "Computing_a%b+c :$result1"
