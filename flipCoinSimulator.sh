@@ -28,11 +28,29 @@ flipCoinSimulator()
 #flipCoinSimulator $coinCheck
 
 #Looping On Coin Simulator and cointing no. of wins for each outcome
-for (( i=0 ; i<$n ; i++))
-do
-	coinCheck=$((RANDOM%2))
-	flipCoinSimulator $coinCheck
-done
-echo ""
-echo "Number Of Heads : $Heads"
-echo "Number Of Tails : $Tails"
+multipleFlips()
+{
+	for (( i=0 ; i<$1 ; i++))
+	do
+		coinCheck=$((RANDOM%2))
+		flipCoinSimulator $coinCheck
+		if [[ $Heads -eq 21 || $Tails -eq 21 ]]
+		then
+			break;
+		fi
+	done
+	
+	echo ""
+	echo "Number Of Heads : $Heads"
+	echo "Number Of Tails : $Tails"
+	if [ $Heads -gt $Tails ]
+        then
+                echo "Heads Win"
+        elif [ $Tails -gt $Heads ]
+        then
+                echo "Tails Win"
+        else
+                echo "Its A draw"
+     	fi
+}
+multipleFlips $n
